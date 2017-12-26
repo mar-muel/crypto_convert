@@ -50,7 +50,8 @@ def main():
     print('---------------------------')
     for currency in balance:
         if not currency == fiat:
-            print('Currency: {}'.format(currency))
+            fractional_value = balance[currency]['value_fiat'] / total_val_crypto_in_fiat
+            print('Currency: {} ({:2.2%})'.format(currency, fractional_value))
             print('Current amount:\t {} {:10.5f}'.format(currency, balance[currency]['amount']))
             print('Current value:\t {} {:10.2f}'.format(fiat, balance[currency]['value_fiat']))
             print('--------------------------')
