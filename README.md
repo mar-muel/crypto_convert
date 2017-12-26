@@ -3,26 +3,27 @@ Simple script to calculate balance of total owned crypto currencies based on pre
 
 # Usage
 ```
-git clone https://github.com/mar-muel/crypto_convert.git
+git clone https://github.com/mar-muel/crypto_convert.git && cd crypto_convert
 pip install -r requirements.txt
-# Change transactions.csv file for your own currencies
+cp transactions.csv.example transactions.csv
+# Change transactions.csv file and fill in your own transactions
 python balance.py
 ```
 
 Output:
 ```
 ---------------------------
-Currency: BTC
+Currency: BTC (5.90%)
 Current amount:	 BTC    0.21100
-Current value:	 EUR    2487.73
+Current value:	 EUR    2650.26
 --------------------------
-Currency: ETH
+Currency: ETH (94.10%)
 Current amount:	 ETH   67.90000
-Current value:	 EUR   41554.12
+Current value:	 EUR   42248.06
 --------------------------
 Net balance of fiat:	EUR   10367.06
-Net value of cryptos:	EUR   44041.85
-Total win/loss:		EUR   54408.91
+Net value of cryptos:	EUR   44898.32
+Total win/loss:		EUR   55265.38
 ```
 
 Enjoy :beers:!
