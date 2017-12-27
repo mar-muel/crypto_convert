@@ -6,9 +6,18 @@ Simple script to calculate balance of total owned crypto currencies based on pre
 git clone https://github.com/mar-muel/crypto_convert.git && cd crypto_convert
 pip install -r requirements.txt
 cp transactions.csv.example transactions.csv
-# Change transactions.csv file and fill in your own transactions (use 3-letter code for currencies and %d/%m/%y %H:%M format for the time of transaction)
+# Change transactions.csv file and fill in your own transactions
 python balance.py
 ```
+Example input (`transactions.csv`):
+
+| Time  | Origin currency | Origin amount | Target currency |
+| ------------- | ------------- | ------------- | ------------- |
+| 22/12/16 00:41  | EUR | 1000 | BTC |
+| 23/12/16 15:15  | EUR | 500 | ETH |
+| 22/12/17 15:15  | BTC | 1 | EUR |
+
+Make sure to use the same timestamp format and currency code abbreviations (according to https://www.cryptocompare.com/coins/).
 
 Output:
 ```
