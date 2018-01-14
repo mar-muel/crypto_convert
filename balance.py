@@ -53,6 +53,7 @@ def main():
         response = requests.get(url).json()
         price_per_fiat = response[fiat]
         balance[currency]['value_fiat'] = balance[currency]['amount'] * price_per_fiat
+        balance[currency]['price'] = price_per_fiat
 
     balance = pd.DataFrame(balance)
 
@@ -65,8 +66,9 @@ def main():
         if currency not in fiat_currencies:
             fractional_value = balance[currency]['value_fiat'] / total_val_crypto_in_fiat
             print('Currency: {} ({:2.2%})'.format(currency, fractional_value))
-            print('Current amount:\t {} {:10.5f}'.format(currency, balance[currency]['amount']))
-            print('Current value:\t {} {:10.2f}'.format(fiat, balance[currency]['value_fiat']))
+            print('Current amount:\t\t {} {:10.5f}'.format(currency, balance[currency]['amount']))
+            print('Current value:\t\t {} {:10.2f}'.format(fiat, balance[currency]['value_fiat']))
+            print('Current price per 1 {}: {} {:10.2f}'.format(currency ,fiat, balance[currency]['price']))
             print('--------------------------')
 
     print('Net balance of fiat:\t{} {:10.2f}'.format(fiat, total_val_fiat))
